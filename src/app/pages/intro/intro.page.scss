@@ -1,0 +1,10 @@
+img{
+
+    padding-top: 10vh;
+    width: 250px;
+    max-width: 500px;
+}
+
+
+
+.scale-up-center{animation:scale-up-center 1.5s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }

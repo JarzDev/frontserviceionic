@@ -1,0 +1,71 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> <a routerLink="/newclient/"><p>Crear Cliente</p></a>
+    <a routerLink="/viewclient/"><p>Ver Clientes</p></a>
+    <a routerLink="/viewcontact/"><p>Ver Contactos</p></a>
+    <a routerLink="/viewequips/"><p>Ver Equipos</p></a>
+    <a routerLink="/viewserv/"><p>Ver Servicios</p></a>
+</ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> 
+  
+    <div class="ion-text-center">
+      <img  src="assets/img/logo.png"  class="scale-up-center imglogo">
+      
+      </div>
+      
+      <div class="d-flex-center">
+      <ion-card >
+       
+
+
+
+        <ion-col >
+   
+      <form [formGroup]="form" (ngSubmit)="createServ()" novalidate>
+        <ion-item>
+          <ion-input label="Nombre del Servicio" formControlName="name_serv" placeholder="Servicio" ></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input type="datetime-local" label="Fecha y Hora del Servicio" formControlName="fecha" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea label="Tareas Realizadas" formControlName="descripcion" placeholder="Tareas..."></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Partes Usadas" formControlName="partes" placeholder="Partes"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea label="Recomendaciones" formControlName="recomendaciones" placeholder="Recomendaciones"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-input type="number" label="Horas de servicio" formControlName="horas_serv" placeholder="horas"></ion-input>
+        </ion-item>
+        <ion-item>
+          <div> <h3>De la Empresa:</h3> <p>{{equipos?.contacto?.cliente?.empresa}}</p> </div>
+        </ion-item>
+        <ion-button type="submit" expand="block">Crear Servicio</ion-button> 
+      </form>
+    </ion-col>
+
+  
+</ion-card>
+</div>
+     
+</ion-content>
+
+</div>

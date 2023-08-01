@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  
+    <div class="ion-text-center">
+      <img  src="assets/img/logo.png"  class="scale-up-center">
+      
+      </div>
+      
+      <div class="d-flex-center">
+      <ion-card >
+       
+
+
+
+        <ion-col >
+   
+      <form [formGroup]="formFb" (ngSubmit)="login()" novalidate>
+        <ion-input   label="email "  formControlName="email" type="email" placeholder="email@domain.com"></ion-input>
+      
+      
+        <ion-input  label="Password " formControlName="password" type="password" value="password"></ion-input>
+      
+        <ion-button type="submit" expand="block">Sing In</ion-button> 
+      </form>
+    </ion-col>
+
+  
+</ion-card>
+</div>
+     
+</ion-content>

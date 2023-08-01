@@ -1,0 +1,68 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> <a routerLink="/newclient/"><p>Crear Cliente</p></a>
+    <a routerLink="/viewclient/"><p>Ver Clientes</p></a>
+    <a routerLink="/viewcontact/"><p>Ver Contactos</p></a>
+    <a routerLink="/viewequips/"><p>Ver Equipos</p></a>
+    <a routerLink="/viewserv/"><p>Ver Servicios</p></a>
+    <ion-button type="button" (click)="logOut()" expand="block">LogOut</ion-button> 
+</ion-content>
+  
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" mode="ios" >
+    <ion-grid>
+  <ion-row>
+  
+  
+    <ion-col routerLink="/newservs/{{item.id}}" *ngFor=" let item of equipos"  size-lg="4" size-md="6"  size-sm="12" size="12"> 
+      <ion-card>
+   <ion-grid>
+  
+    <ion-row>
+      <ion-col size-lg="4" size-md="4"  size-sm="4" size="12">
+        <ion-avatar>
+          <img  src="assets/img/logo.png"  class="scale-up-center">
+        </ion-avatar>
+                </ion-col>
+      <ion-col size-lg="4" size-md="4"  size-sm="4" size="12">
+    </ion-col>
+      <ion-col size-lg="8" size-md="8"  size-sm="8" size="12">
+        <div>
+         <h3> {{item.marca}}   </h3>
+          <p> Modelo: <br> <strong> {{item.modelo}} </strong></p>
+          <p> Serial: <br> <strong> {{item.serial}} </strong></p>
+          <p> Empresa: <br> <strong> {{item.contacto.cliente.empresa}} </strong></p>
+
+        </div>
+      </ion-col>
+      
+      </ion-row>
+      
+        
+      </ion-grid>
+    
+    
+    
+    </ion-card>
+  </ion-col>
+  
+  </ion-row>
+  </ion-grid>
+  </ion-content>
+</div>
+
+
+
