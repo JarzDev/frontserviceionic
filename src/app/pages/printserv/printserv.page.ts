@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ServsService } from 'src/app/services/servs.service';
 import Swal from 'sweetalert2';
 
-import { AuthFireService } from 'src/app/services/auth-fire.service';
+import { AuthMockService } from 'src/app/services/auth-mock.service';
 
 @Component({
   selector: 'app-printserv',
@@ -13,7 +13,7 @@ import { AuthFireService } from 'src/app/services/auth-fire.service';
 export class PrintservPage  {
   servicio: any={  }
 
-  constructor( private activeRouter: ActivatedRoute, private router:Router, private servSvr: ServsService, private authSrv: AuthFireService) {
+  constructor( private activeRouter: ActivatedRoute, private router:Router, private servSvr: ServsService, private authSrv: AuthMockService) {
     let id = this.activeRouter.snapshot.params['id'];
     this.servSvr.getServsById(id).subscribe(
       (data) => {

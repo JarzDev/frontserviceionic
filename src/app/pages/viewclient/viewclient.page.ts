@@ -3,7 +3,7 @@ import { Client } from 'src/app/interfaces/client';
 import { ClientsService } from 'src/app/services/clients.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { AuthFireService } from 'src/app/services/auth-fire.service';
+import { AuthMockService } from 'src/app/services/auth-mock.service';
 
 @Component({
   selector: 'app-viewclient',
@@ -14,7 +14,7 @@ export class ViewclientPage  {
 
   cliente:Client[] = [];
 
-  constructor( private clientService: ClientsService, private authSrv: AuthFireService, private router: Router) {
+  constructor( private clientService: ClientsService, private authSrv: AuthMockService, private router: Router) {
 
     if(localStorage.getItem('token') == null){
       this.router.navigate(['/intro']);

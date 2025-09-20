@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { EquipsService } from 'src/app/services/equips.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { AuthFireService } from 'src/app/services/auth-fire.service';
+import { AuthMockService } from 'src/app/services/auth-mock.service';
 
 @Component({
   selector: 'app-viewequips',
@@ -13,7 +13,7 @@ export class ViewequipsPage  {
 
   equipos : any[] = [];
 
-  constructor(private equipSvr : EquipsService, private authSrv: AuthFireService, private router: Router) {
+  constructor(private equipSvr : EquipsService, private authSrv: AuthMockService, private router: Router) {
     if(localStorage.getItem('token') == null){
       this.router.navigate(['/intro']);
     }

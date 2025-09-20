@@ -6,19 +6,19 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule,FormsModule,
-    ReactiveFormsModule,HttpClientModule, IonicModule.forRoot(), AppRoutingModule,  provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()) ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
-
-  
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -13,24 +13,56 @@
       
       <div class="d-flex-center">
       <ion-card >
+        <ion-card-header>
+          <ion-card-title>Iniciar Sesión</ion-card-title>
+          <ion-card-subtitle>Sistema Mock - Credenciales de prueba</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-col >
        
+          <form [formGroup]="formFb" (ngSubmit)="login()" novalidate>
+            <ion-input   label="email "  formControlName="email" type="email" placeholder="email@domain.com"></ion-input>
+          
+          
+            <ion-input  label="Password " formControlName="password" type="password" value="password"></ion-input>
+          
+            <ion-button type="submit" expand="block">Iniciar Sesión</ion-button> 
+          </form>
 
+          <!-- Información de credenciales mock -->
+          <ion-card class="mock-info-card" style="margin-top: 20px; background-color: #f0f8ff;">
+            <ion-card-header>
+              <ion-card-title style="font-size: 16px; color: #2196F3;">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                Credenciales de Prueba
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div style="font-size: 14px;">
+                <div style="margin-bottom: 10px;">
+                  <strong>Admin:</strong><br>
+                  Email: admin@test.com<br>
+                  Password: admin123
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <strong>Usuario:</strong><br>
+                  Email: user@test.com<br>
+                  Password: user123
+                </div>
+                <div>
+                  <strong>Demo:</strong><br>
+                  Email: demo@demo.com<br>
+                  Password: demo
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
 
+        </ion-col>
+        </ion-card-content>
 
-        <ion-col >
-   
-      <form [formGroup]="formFb" (ngSubmit)="login()" novalidate>
-        <ion-input   label="email "  formControlName="email" type="email" placeholder="email@domain.com"></ion-input>
-      
-      
-        <ion-input  label="Password " formControlName="password" type="password" value="password"></ion-input>
-      
-        <ion-button type="submit" expand="block">Sing In</ion-button> 
-      </form>
-    </ion-col>
-
-  
-</ion-card>
+      </ion-card>
 </div>
      
 </ion-content>

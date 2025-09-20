@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthFireService } from 'src/app/services/auth-fire.service';
+import { AuthMockService } from 'src/app/services/auth-mock.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,7 +14,7 @@ export class HomePage  {
   token = '';
    email = localStorage.getItem('email');
   formFb: FormGroup;
-  constructor( private router: Router, private authSrv: AuthFireService ) {
+  constructor( private router: Router, private authSrv: AuthMockService ) {
     this.formFb = new FormGroup({
       email: new FormControl(''),
       password: new FormControl(''),

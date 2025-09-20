@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ServsService } from 'src/app/services/servs.service';
-import { AuthFireService } from 'src/app/services/auth-fire.service';
+import { AuthMockService } from 'src/app/services/auth-mock.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class ViewservPage  {
 
   servicios : any[] = [];
 
-  constructor(private servSrv: ServsService, private authSrv: AuthFireService, private router: Router ) {
+  constructor(private servSrv: ServsService, private authSrv: AuthMockService, private router: Router ) {
 
     if(localStorage.getItem('token') == null){
       this.router.navigate(['/intro']);
